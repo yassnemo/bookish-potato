@@ -34,7 +34,18 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      await apiRequest("POST", "/api/contact", formData);
+      // For Vercel deployment, we'll use the API route directly
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
       
       toast({
         title: "Message Sent",
