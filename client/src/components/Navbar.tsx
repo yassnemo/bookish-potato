@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
+import ContrastToggle from "./ContrastToggle";
 import { Menu, X } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isHighContrast } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +44,10 @@ export default function Navbar() {
           <a href="#skills" className="nav-link">Skills</a>
           <a href="#contact" className="nav-link">Contact</a>
           
-          <ThemeToggle />
+          <div className="flex items-center space-x-2">
+            <ThemeToggle />
+            <ContrastToggle />
+          </div>
         </div>
 
         {/* Mobile menu button */}
@@ -74,10 +80,15 @@ export default function Navbar() {
               <a href="#skills" onClick={closeMobileMenu} className="nav-link py-2">Skills</a>
               <a href="#contact" onClick={closeMobileMenu} className="nav-link py-2">Contact</a>
               
-              {/* Dark mode toggle (mobile) */}
+              {/* Theme toggles (mobile) */}
               <div className="flex items-center justify-between py-2">
                 <span>Dark Mode</span>
                 <ThemeToggle />
+              </div>
+              
+              <div className="flex items-center justify-between py-2">
+                <span>High Contrast</span>
+                <ContrastToggle />
               </div>
             </div>
           </motion.div>

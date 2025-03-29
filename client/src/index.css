@@ -67,6 +67,54 @@
     --sidebar-foreground: 0 0% 95%;
     --sidebar-border: 240 3.7% 20%;
   }
+  
+  /* High contrast mode for light theme */
+  .high-contrast:not(.dark) {
+    --primary: 230 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 195 100% 35%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 340 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    
+    --card: 0 0% 95%;
+    --card-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 85%;
+    --muted-foreground: 0 0% 0%;
+    
+    --border: 0 0% 50%;
+    --input: 0 0% 80%;
+  }
+  
+  /* High contrast mode for dark theme */
+  .dark.high-contrast {
+    --primary: 230 100% 70%;
+    --primary-foreground: 0 0% 0%;
+    
+    --secondary: 195 100% 75%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --accent: 340 100% 75%;
+    --accent-foreground: 0 0% 0%;
+    
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 100%;
+    
+    --border: 0 0% 75%;
+    --input: 0 0% 30%;
+  }
 
   * {
     @apply border-border;
