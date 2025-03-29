@@ -46,16 +46,16 @@ export default function Skills() {
         <motion.div 
           ref={ref}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-          initial={{ opacity: 0, y: 50 }}
-          animate={controls}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Technical Skills */}
           <div className="skills-container">
             <motion.h3 
               className="text-2xl font-heading font-semibold mb-6"
-              initial={{ opacity: 0, x: -20 }}
-              animate={controls}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               Technical Skills
@@ -63,16 +63,16 @@ export default function Skills() {
             
             <motion.div 
               className="space-y-6"
-              initial={{ opacity: 0 }}
-              animate={controls}
-              transition={{ duration: 0.8, delay: 0.2, staggerChildren: 0.1 }}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               {skills.map((skill, index) => (
                 <motion.div 
                   key={index} 
                   className="skill-item"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={controls}
+                  initial={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   whileHover={{ scale: 1.03 }}
                 >
@@ -83,7 +83,7 @@ export default function Skills() {
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <motion.div 
                       className="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full"
-                      initial={{ width: 0 }}
+                      initial={{ width: `${skill.level}%` }}
                       animate={{ width: `${skill.level}%` }}
                       transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
                     />
@@ -95,8 +95,8 @@ export default function Skills() {
             {/* Technology Icons */}
             <motion.div 
               className="mt-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={controls}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <h4 className="text-lg font-heading font-medium mb-4">Technologies & Frameworks</h4>
@@ -105,8 +105,8 @@ export default function Skills() {
                   <motion.div 
                     key={index} 
                     className="tech-icon"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={controls}
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 + index * 0.05 }}
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
                   >
@@ -122,8 +122,8 @@ export default function Skills() {
           <div className="experience-container">
             <motion.h3 
               className="text-2xl font-heading font-semibold mb-6"
-              initial={{ opacity: 0, x: -20 }}
-              animate={controls}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               Experience & Education
@@ -135,8 +135,8 @@ export default function Skills() {
                 <motion.div 
                   key={index} 
                   className="experience-item"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={controls}
+                  initial={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.2 }}
                 >
                   <div className="absolute -left-3 w-6 h-6 bg-white dark:bg-gray-900 border-2 border-primary rounded-full"></div>
@@ -154,8 +154,8 @@ export default function Skills() {
                 <motion.div 
                   key={index} 
                   className="experience-item"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={controls}
+                  initial={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 + index * 0.2 }}
                 >
                   <div className="absolute -left-3 w-6 h-6 bg-white dark:bg-gray-900 border-2 border-secondary rounded-full"></div>
@@ -174,8 +174,8 @@ export default function Skills() {
         {/* GitHub Contributions */}
         <motion.div 
           className="mt-16 p-6 bg-white dark:bg-card rounded-xl shadow-lg"
-          initial={{ opacity: 0, y: 30 }}
-          animate={controls}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
           <h3 className="text-2xl font-heading font-semibold mb-6">GitHub Contributions</h3>

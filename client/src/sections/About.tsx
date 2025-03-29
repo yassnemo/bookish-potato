@@ -22,8 +22,8 @@ export default function About() {
         <motion.div 
           ref={ref}
           className="flex flex-col lg:flex-row gap-12 items-center"
-          initial={{ opacity: 0, y: 50 }}
-          animate={controls}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div 
@@ -74,8 +74,8 @@ export default function About() {
           <div className="lg:w-3/5">
             <motion.h3 
               className="text-2xl md:text-3xl font-heading font-semibold mb-4"
-              initial={{ opacity: 0, x: -20 }}
-              animate={controls}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               Data Scientist & Machine Learning Engineer
@@ -83,8 +83,8 @@ export default function About() {
             
             <motion.p 
               className="text-lg text-gray-700 dark:text-gray-300 mb-6"
-              initial={{ opacity: 0, x: -20 }}
-              animate={controls}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               Hello! I'm Yassine, a passionate Data Science student with expertise in Machine Learning and Artificial Intelligence. My journey in the world of data began with a fascination for how information can be transformed into actionable insights and innovative solutions.
@@ -92,8 +92,8 @@ export default function About() {
             
             <motion.p 
               className="text-lg text-gray-700 dark:text-gray-300 mb-6"
-              initial={{ opacity: 0, x: -20 }}
-              animate={controls}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               I specialize in developing predictive models, conducting exploratory data analysis, and implementing machine learning algorithms to solve complex problems. My work spans from fraud detection systems to advanced chess game analyzers, always focusing on the intersection of data science and real-world applications.
@@ -101,8 +101,8 @@ export default function About() {
             
             <motion.div 
               className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={controls}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               {statsItems.map((stat, index) => (
@@ -126,8 +126,8 @@ export default function About() {
             <motion.a 
               href="#contact" 
               className="btn-primary"
-              initial={{ opacity: 0, y: 30 }}
-              animate={controls}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

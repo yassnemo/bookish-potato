@@ -71,15 +71,15 @@ export default function Contact() {
         <motion.div 
           ref={ref}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-          initial={{ opacity: 0, y: 50 }}
-          animate={controls}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Contact Form */}
           <motion.div 
             className="contact-form"
-            initial={{ opacity: 0, x: -30 }}
-            animate={controls}
+            initial={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="bg-white dark:bg-card rounded-xl shadow-lg p-8">
@@ -154,8 +154,8 @@ export default function Contact() {
           {/* Contact Information */}
           <motion.div 
             className="contact-info"
-            initial={{ opacity: 0, x: 30 }}
-            animate={controls}
+            initial={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="bg-white dark:bg-card rounded-xl shadow-lg p-8 h-full">
@@ -246,8 +246,8 @@ export default function Contact() {
               
               <motion.div 
                 className="mt-10"
-                initial={{ opacity: 0, y: 20 }}
-                animate={controls}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 <h4 className="text-lg font-medium mb-4">Let's Connect</h4>

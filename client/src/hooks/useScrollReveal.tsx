@@ -5,14 +5,13 @@ export function useScrollReveal(): [React.RefObject<HTMLDivElement>, AnimationCo
   const ref = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const inView = useInView(ref, { 
-    once: false,
-    threshold: 0.2,
+    once: true, // Changed to true to trigger once
+    amount: 0.1, // Use amount instead of threshold
   });
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
+    // Always start with content visible
+    controls.start("visible");
   }, [controls, inView]);
 
   return [ref, controls];

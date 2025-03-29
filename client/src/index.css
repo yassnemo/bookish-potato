@@ -107,7 +107,7 @@
   }
 
   .section-heading {
-    @apply relative mb-16 text-center;
+    @apply relative mb-16 text-center flex flex-col items-center justify-center;
   }
 
   .section-heading h2 {
@@ -115,7 +115,7 @@
   }
 
   .section-heading::after {
-    @apply content-[''] absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full;
+    @apply content-[''] mt-4 w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full;
   }
 
   .tech-icon {
