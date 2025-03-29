@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 246 100% 69%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 195 100% 65%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 340 100% 76%;
+    --accent-foreground: 0 0% 100%;
+    
+    --background: 210 17% 98%;
+    --foreground: 240 10% 4%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+    
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    
+    --radius: 0.5rem;
+
+    --chart-1: 246 100% 69%;
+    --chart-2: 195 100% 65%;
+    --chart-3: 340 100% 76%;
+    --chart-4: 142 76% 36%;
+    --chart-5: 275 80% 70%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 10% 4%;
+    --sidebar-primary: 246 100% 69%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 100% 65%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 142.1 76.2% 36.3%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+    
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 95%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --border: 240 3.7% 20%;
+    --input: 240 3.7% 20%;
+    
+    --sidebar-background: 240 10% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-border: 240 3.7% 20%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden relative;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-card/80 backdrop-blur-md shadow-lg border border-white/20 dark:border-white/10;
+  }
+
+  .nav-link {
+    @apply relative overflow-hidden font-medium text-foreground hover:text-primary transition-colors;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition transform hover:-translate-y-1 shadow-lg hover:shadow-primary/20 dark:hover:shadow-primary/40;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 rounded-lg border-2 border-primary text-primary dark:text-white font-medium hover:bg-primary/10 transition transform hover:-translate-y-1;
+  }
+
+  .section-heading {
+    @apply relative mb-16 text-center;
+  }
+
+  .section-heading h2 {
+    @apply text-4xl md:text-5xl font-heading font-bold bg-gradient-to-r from-primary to-secondary inline-block text-transparent bg-clip-text;
+  }
+
+  .section-heading::after {
+    @apply content-[''] absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full;
+  }
+
+  .tech-icon {
+    @apply p-3 bg-white dark:bg-card rounded-lg shadow-md flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
+  }
+
+  .social-btn {
+    @apply p-3 rounded-full bg-white dark:bg-card shadow-md hover:shadow-primary/20 dark:hover:shadow-primary/30 transition transform hover:-translate-y-1;
+  }
+
+  .about-stat {
+    @apply p-4 bg-white dark:bg-card rounded-lg shadow-md text-center transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .project-card {
+    @apply relative bg-white dark:bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2;
+  }
+
+  .skill-item {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+
+  .experience-item {
+    @apply opacity-0 translate-y-6 transition-all duration-700;
+  }
+
+  .experience-item.revealed {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .wave-container {
+    @apply absolute bottom-0 left-0 w-full;
+  }
+
+  .waves {
+    @apply w-full h-[15vh] min-h-[100px] max-h-[150px];
+  }
+
+  .parallax > use {
+    @apply animate-wave;
+  }
+
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
