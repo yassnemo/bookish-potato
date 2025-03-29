@@ -20,22 +20,9 @@ export default function Hero() {
     };
   }, []);
   
-  // Wave SVG
-  const waveAnimation = (
-    <div className="absolute inset-0 z-0">
-      <div className="wave-container">
-        <svg className="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
-          <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-          </defs>
-          <g className="parallax">
-            <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(108, 99, 255, 0.1)" />
-            <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(75, 219, 255, 0.1)" />
-            <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255, 94, 148, 0.1)" />
-          </g>
-        </svg>
-      </div>
-    </div>
+  // Gradient background effect
+  const gradientBackground = (
+    <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-primary/5 dark:to-primary/10"></div>
   );
 
   // Hero container variants
@@ -61,7 +48,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {waveAnimation}
+      {gradientBackground}
 
       <motion.div 
         className="container mx-auto px-6 z-10 text-center"
@@ -83,23 +70,23 @@ export default function Hero() {
         </motion.div>
         
         <motion.div 
-          className="h-8 overflow-hidden my-4"
+          className="h-10 overflow-hidden my-4 flex justify-center"
           variants={itemVariants}
         >
-          <div className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium">
+          <div className="relative h-10 text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium">
             {roles.map((role, index) => (
-              <div 
+              <motion.div 
                 key={role}
-                className="transition-all duration-500 transform"
-                style={{ 
+                className="absolute left-1/2 transform -translate-x-1/2 w-max"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ 
                   opacity: currentRoleIndex === index ? 1 : 0,
-                  transform: `translateY(${(index - currentRoleIndex) * 32}px)`,
-                  position: index === 0 ? 'relative' : 'absolute',
-                  width: '100%'
+                  y: currentRoleIndex === index ? 0 : 20
                 }}
+                transition={{ duration: 0.5 }}
               >
                 {role}
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

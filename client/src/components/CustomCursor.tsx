@@ -23,17 +23,10 @@ export default function CustomCursor() {
   if (isMobile) return null;
 
   return (
-    <>
-      <motion.div
-        className="fixed w-8 h-8 rounded-full pointer-events-none z-50 border-2 border-primary mix-blend-difference"
-        animate={{ x: mousePosition.x - 16, y: mousePosition.y - 16 }}
-        transition={{ type: "spring", stiffness: 100, damping: 25 }}
-      />
-      <motion.div
-        className="fixed w-2 h-2 rounded-full bg-white pointer-events-none z-50 mix-blend-difference"
-        animate={{ x: mousePosition.x - 4, y: mousePosition.y - 4 }}
-        transition={{ type: "spring", stiffness: 250, damping: 15 }}
-      />
-    </>
+    <motion.div
+      className="fixed w-3 h-3 rounded-full bg-primary pointer-events-none z-50 mix-blend-difference"
+      animate={{ x: mousePosition.x - 6, y: mousePosition.y - 6 }}
+      transition={{ type: "spring", stiffness: 250, damping: 15 }}
+    />
   );
 }
