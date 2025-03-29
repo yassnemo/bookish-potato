@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
@@ -75,9 +75,41 @@ export default function Hero() {
         >
           <div className="flex justify-center items-center">
             <div className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium text-center">
-              {currentRoleIndex === 0 && <div>Data Scientist</div>}
-              {currentRoleIndex === 1 && <div>Machine Learning Engineer</div>}
-              {currentRoleIndex === 2 && <div>AI Enthusiast</div>}
+              <AnimatePresence mode="wait">
+                {currentRoleIndex === 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    key="data-scientist"
+                  >
+                    Data Scientist
+                  </motion.div>
+                )}
+                {currentRoleIndex === 1 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    key="ml-engineer"
+                  >
+                    Machine Learning Engineer
+                  </motion.div>
+                )}
+                {currentRoleIndex === 2 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    key="ai-enthusiast"
+                  >
+                    AI Enthusiast
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>
