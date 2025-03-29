@@ -70,24 +70,15 @@ export default function Hero() {
         </motion.div>
         
         <motion.div 
-          className="h-10 overflow-hidden my-4 flex justify-center w-full"
+          className="h-10 overflow-hidden my-4"
           variants={itemVariants}
         >
-          <div className="relative h-10 text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium text-center mx-auto">
-            {roles.map((role, index) => (
-              <motion.div 
-                key={role}
-                className="absolute left-0 right-0 mx-auto w-max"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: currentRoleIndex === index ? 1 : 0,
-                  y: currentRoleIndex === index ? 0 : 20
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                {role}
-              </motion.div>
-            ))}
+          <div className="flex justify-center items-center">
+            <div className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium text-center">
+              {currentRoleIndex === 0 && <div>Data Scientist</div>}
+              {currentRoleIndex === 1 && <div>Machine Learning Engineer</div>}
+              {currentRoleIndex === 2 && <div>AI Enthusiast</div>}
+            </div>
           </div>
         </motion.div>
         
