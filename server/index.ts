@@ -60,11 +60,20 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  server.listen(port, () => {
+    log(`=================================`);
+    log(`Server running in ${app.get('env')} mode`);
+    log(`API and client serving on port ${port}`);
+    log(`Open http://localhost:${port} in your browser`);
+    log(`=================================`);
+    
+    // Add a simple health check route to verify server is working
+    app.get('/api/health', (req, res) => {
+      res.json({ status: 'ok', timestamp: new Date().toISOString() });
+    });
   });
-})();
+})().catch(error => {
+  console.error('Failed to start server:');
+  console.error(error);
+  process.exit(1);
+});
