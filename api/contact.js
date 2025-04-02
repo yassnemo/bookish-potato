@@ -3,8 +3,8 @@ export default function handler(req, res) {
     // Get contact data from request body
     const { name, email, subject, message } = req.body;
     
-    // Here you would typically send this data to an email service
-    // For now, we'll just return a success response
+    // Here we would typically send this data to an email service
+    // but for now, we'll just return a success response
     
     // Basic validation
     if (!name || !email || !subject || !message) {
